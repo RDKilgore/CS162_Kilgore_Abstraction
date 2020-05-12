@@ -2,7 +2,7 @@
  * Felipe Arreola, Rian Kilgore
  * TODO: Is this an abstract or concrete method? Is it a parent or child class? Is it public or private?
  */
-public abstract class Shape extends Point {
+public abstract class Shape  {
 
     protected Point position;
     private static int numShapes = 0;
@@ -21,9 +21,8 @@ public abstract class Shape extends Point {
         return numShapes;
     }
 
-    public void setPosition(Double initX, Double initY){
-        setX(initX);
-        setY(initY);
+    public void setPosition(Point position){
+        this.position = position;
     }
 
     /**
@@ -44,5 +43,8 @@ public abstract class Shape extends Point {
      */
     public abstract String getType();
 
-
+    @Override
+    public String toString() {
+        return "Type of Shape: " + getType() + "Area: " + computeArea() + "Perimeter: " + getPerimeter();
+    }
 }
